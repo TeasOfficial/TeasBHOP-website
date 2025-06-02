@@ -21,6 +21,10 @@ declare module 'vue-router/auto-routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/downloads': RouteRecordInfo<'/downloads', '/downloads', Record<never, never>, Record<never, never>>,
     '/downloads/64': RouteRecordInfo<'/downloads/64', '/downloads/64', Record<never, never>, Record<never, never>>,
+    '/downloads/maps': RouteRecordInfo<'/downloads/maps', '/downloads/maps', Record<never, never>, Record<never, never>>,
+    '/downloads/metamod': RouteRecordInfo<'/downloads/metamod', '/downloads/metamod', Record<never, never>, Record<never, never>>,
+    '/downloads/shavit-timer': RouteRecordInfo<'/downloads/shavit-timer', '/downloads/shavit-timer', Record<never, never>, Record<never, never>>,
+    '/downloads/sourcemod': RouteRecordInfo<'/downloads/sourcemod', '/downloads/sourcemod', Record<never, never>, Record<never, never>>,
     '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
     '/submit-a-translation': RouteRecordInfo<'/submit-a-translation', '/submit-a-translation', Record<never, never>, Record<never, never>>,
   }

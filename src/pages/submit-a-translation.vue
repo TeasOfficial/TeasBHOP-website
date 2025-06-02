@@ -2,28 +2,28 @@
   <v-lazy>
     <v-container>
       <p class="text-h5">
-        {{ $t('$vuetify.translate.title') }}
+        {{ $t('translate.title') }}
       </p>
       <div class="text-body-2 font-weight-light mb-n1">
-        {{ $t('$vuetify.translate.subtitle') }}
+        {{ $t('translate.subtitle') }}
       </div>
       <v-divider /><br>
       <p class="text-h6">
-        {{ $t('$vuetify.translate.q1') }}
+        {{ $t('translate.q1') }}
       </p>
       <p>
-        {{ $t('$vuetify.translate.a1') }}
+        {{ $t('translate.a1') }}
       </p>
       <br>
       <p class="text-h6">
-        {{ $t('$vuetify.translate.q2') }}
+        {{ $t('translate.q2') }}
       </p>
       <p>
-        {{ $t('$vuetify.translate.a2') }}
+        {{ $t('translate.a2') }}
       </p>
       <br>
       <p class="text-h6">
-        {{ $t('$vuetify.translate.q3') }}
+        {{ $t('translate.q3') }}
       </p>
       <p>
         <a href="https://github.com/TeasOfficial/TeasBHOP-website" target="_blank">

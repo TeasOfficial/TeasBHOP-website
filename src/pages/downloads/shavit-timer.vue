@@ -1,11 +1,11 @@
 <template>
   <v-lazy min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
-    <v-container class="cursor-default">
+    <v-container>
       <p class="text-h5">
-        {{ $t('downloads.x64.title') }}
+        {{ $t('shavit.timer.title') }}
       </p>
       <div class="text-body-2 font-weight-light mb-n1">
-        Counter-Strike: Source
+        {{ $t('shavit.timer.desc') }}
       </div>
       <v-divider /><br>
       <p>
@@ -14,8 +14,8 @@
       <br>
       <v-row>
         <v-col cols="auto">
-          <v-btn href="https://www.123912.com/s/oXqMjv-BmVov" target="_blank">
-            {{ $t('downloads.cdn.pan123') }}
+          <v-btn href="https://github.com/shavitush/bhoptimer" target="_blank">
+            {{ $t('downloads.cdn.github') }}
           </v-btn>
         </v-col>
       </v-row>
@@ -23,15 +23,14 @@
       <v-expansion-panels>
         <v-expansion-panel
           style="white-space: pre-line;"
-          :text="$t('downloads.x64.notice1.value')"
-          :title="$t('downloads.x64.notice1.title')"
-        />
-        <v-expansion-panel
-          style="white-space: pre-line;"
-          :text="$t('downloads.cdn.notice.value')"
+          :text="$t('downloads.cdn.notice.github')"
           :title="$t('downloads.cdn.notice.title')"
         />
       </v-expansion-panels>
+      <br>
+      <p>
+        <i>{{ $t('shavit.timer.alert') }}</i>
+      </p>
     </v-container>
   </v-lazy>
 </template>

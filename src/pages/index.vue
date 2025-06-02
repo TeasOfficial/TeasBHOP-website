@@ -4,7 +4,7 @@
       <div class="text-center cursor-default">
         <h1 class="text-h2">TeasBhop</h1>
         <div class="text-body-2 font-weight-light mb-n1">
-          {{ $t('$vuetify.welcome') }}
+          {{ $t('welcome') }}
         </div>
 
         <br>
@@ -12,19 +12,19 @@
         <v-row align="center" justify="center">
           <v-col cols="auto">
             <v-btn to="home">
-              {{ $t(`$vuetify.index.website`) }}
+              {{ $t(`index.website`) }}
             </v-btn>
           </v-col>
 
           <v-col cols="auto">
             <v-btn to="downloads">
-              {{ $t(`$vuetify.index.downloads`) }}
+              {{ $t(`index.downloads`) }}
             </v-btn>
           </v-col>
         </v-row>
         <br>
         <v-btn to="/submit-a-translation" variant="text">
-          {{ $t('$vuetify.index.translate') }}
+          {{ $t('index.translate') }}
         </v-btn>
       </div>
     </v-container>
