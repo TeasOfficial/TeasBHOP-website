@@ -7,3 +7,7 @@
     </v-container>
   </v-lazy>
 </template>
+
+<style lang="scss" scoped>
+
+</style>

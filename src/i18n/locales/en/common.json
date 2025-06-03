@@ -17,7 +17,15 @@
     }
   },
   "footer": {
-    "back": "HOME"
+    "back": "HOME",
+    "translate": "Languages"
   },
-  "work_in_progress": "The website/page is still under construction, please be patient!"
+  "work_in_progress": "The website/page is still under construction, please be patient!",
+  "error": {
+    "404": {
+      "title": "Oops!",
+      "subtitle": "404 Not found",
+      "text": "Details\nPage not found"
+    }
+  }
 }

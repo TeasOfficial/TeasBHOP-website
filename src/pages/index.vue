@@ -11,13 +11,19 @@
 
         <v-row align="center" justify="center">
           <v-col cols="auto">
-            <v-btn to="home">
+            <v-btn to="/main">
               {{ $t(`index.website`) }}
             </v-btn>
           </v-col>
 
           <v-col cols="auto">
-            <v-btn to="downloads">
+            <v-btn href="https://bbs.ipairsdo.xin" target="_blank">
+              {{ $t(`index.forum.button`) }}
+            </v-btn>
+          </v-col>
+
+          <v-col cols="auto">
+            <v-btn to="/downloads">
               {{ $t(`index.downloads`) }}
             </v-btn>
           </v-col>

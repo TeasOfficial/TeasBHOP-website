@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="zhHans">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeasBHOP Website</title>
-    <link rel='stylesheet' href='https://fontsapi.zeoseven.com/442/main/result.css' /> 
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeasBHOP Website</title>
+  <link rel="preload" as="style" crossorigin
+    href="https://fontsapi.zeoseven.com/83/main/result.css"
+    onload="this.rel='stylesheet'"
+    onerror="this.href='https://fontsapi-storage.zeoseven.com/83/main/result.css'" />
+<noscript>
+    <link rel="stylesheet" href="https://fontsapi.zeoseven.com/83/main/result.css" />
+</noscript>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

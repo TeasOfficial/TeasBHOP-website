@@ -9,9 +9,23 @@ import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { routes } from 'vue-router/auto-routes'
 
+const generatedRoutes = setupLayouts(routes)
+
+generatedRoutes.push({
+  path: '/:pathMatch(.*)*',
+  name: 'NotFound',
+  component: () => import('@/pages/404.vue'),
+})
+
+generatedRoutes.push({
+  path: '/maps/:pathMatch(.*)*',
+  name: 'MapInfomation',
+  component: () => import('@/pages/mapinfo.vue'),
+})
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
+  routes: generatedRoutes,
 })
 
 // Workaround for https://github.com/vitejs/vite/issues/11804

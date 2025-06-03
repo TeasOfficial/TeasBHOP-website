@@ -1,12 +1,27 @@
 {
   "welcome": "踏碎速度之壁垒，飞跃空域如坦途",
   "footer": {
-    "back": "返回主页"
+    "back": "返回主页",
+    "translate": "切换语言",
+    "records": {
+      "button": "记录"
+    },
+    "maps": {
+      "button": "地图"
+    },
+    "index": "首页",
+    "leaderboards": {
+      "button": "排行榜"
+    },
+    "backtolast": "返回上一页"
   },
   "index": {
     "website": "访问官网",
     "downloads": "资源下载",
-    "translate": "> 为翻译做出贡献 <"
+    "translate": "> 为翻译做出贡献 <",
+    "forum": {
+      "button": "访问论坛"
+    }
   },
   "translate": {
     "title": "提交翻译文件 / 为翻译工作贡献力量",
@@ -106,5 +121,63 @@
       "alert": "不含插件安装教程，请自行前往 B站、抖音 等平台搜索相关教程。"
     }
   },
-  "work_in_progress": "网站/页面 仍在制作中，请耐心等待！"
+  "work_in_progress": "网站/页面 仍在制作中，请耐心等待！",
+  "error": {
+    "404": {
+      "title": "哎呦，出错啦！",
+      "subtitle": "404 页面未找到",
+      "text": "详细信息\n你要找的页面不存在（或未返回任何内容）"
+    }
+  },
+  "main": {
+    "subtitle": "你可以在下方导航栏访问数据",
+    "serverlists": {
+      "title": "服务器列表",
+      "header": {
+        "1": "服务器名称",
+        "2": "快捷加入"
+      },
+      "body": {
+        "fastjoin": "点击加入"
+      }
+    },
+    "sociallink": "社交链接",
+    "video": {
+      "title": "推荐视频"
+    }
+  },
+  "social": {
+    "discord": "Discord",
+    "bilibili": "哔哩哔哩",
+    "github": "Github"
+  },
+  "maplist": {
+    "title": "地图列表",
+    "mapname": "地图名",
+    "searchhint": "只会返回15个匹配的结果"
+  },
+  "tier": "Tier",
+  "mapinfo": {
+    "title": "地图详情",
+    "sourcejump": {
+      "nomap": "SourceJump 未收录该地图 / 无记录",
+      "infomation": "SourceJump 信息",
+      "points": "积分"
+    },
+    "downloadbtn": "下载地图",
+    "serverrecord": "Server Record",
+    "record": {
+      "spenttime": "记录用时",
+      "createtime": "记录创建时间"
+    },
+    "table": {
+      "title1": "排名",
+      "title2": "用户名",
+      "title3": "记录用时",
+      "title4": "记录时间"
+    },
+    "top1": {
+      "map_no_records": "地图无记录..."
+    }
+  }
 }

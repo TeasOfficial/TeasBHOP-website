@@ -19,13 +19,17 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
+    '/404': RouteRecordInfo<'/404', '/404', Record<never, never>, Record<never, never>>,
     '/downloads': RouteRecordInfo<'/downloads', '/downloads', Record<never, never>, Record<never, never>>,
     '/downloads/64': RouteRecordInfo<'/downloads/64', '/downloads/64', Record<never, never>, Record<never, never>>,
     '/downloads/maps': RouteRecordInfo<'/downloads/maps', '/downloads/maps', Record<never, never>, Record<never, never>>,
     '/downloads/metamod': RouteRecordInfo<'/downloads/metamod', '/downloads/metamod', Record<never, never>, Record<never, never>>,
     '/downloads/shavit-timer': RouteRecordInfo<'/downloads/shavit-timer', '/downloads/shavit-timer', Record<never, never>, Record<never, never>>,
     '/downloads/sourcemod': RouteRecordInfo<'/downloads/sourcemod', '/downloads/sourcemod', Record<never, never>, Record<never, never>>,
-    '/home': RouteRecordInfo<'/home', '/home', Record<never, never>, Record<never, never>>,
+    '/main': RouteRecordInfo<'/main', '/main', Record<never, never>, Record<never, never>>,
+    '/main/maps': RouteRecordInfo<'/main/maps', '/main/maps', Record<never, never>, Record<never, never>>,
+    '/main/records': RouteRecordInfo<'/main/records', '/main/records', Record<never, never>, Record<never, never>>,
+    '/mapinfo': RouteRecordInfo<'/mapinfo', '/mapinfo', Record<never, never>, Record<never, never>>,
     '/submit-a-translation': RouteRecordInfo<'/submit-a-translation', '/submit-a-translation', Record<never, never>, Record<never, never>>,
   }
 }

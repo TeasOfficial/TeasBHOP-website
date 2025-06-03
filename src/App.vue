@@ -10,6 +10,7 @@
 
 <style>
 * {
-  font-family: "Maple Mono NF CN" !important;
+  font-family: "Chill Round Gothic" !important;
+  font-weight: normal;
 }
 </style>
