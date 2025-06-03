@@ -14,7 +14,7 @@
             class="align-end text-white"
             cover
             height="400"
-            :src="`https://raw.bgithub.xyz/TeasOfficial/map-tumbnail/refs/heads/main/${mapname}.jpg`"
+            :src="`https://raw.githubusercontent.com/TeasOfficial/map-tumbnail/refs/heads/main/${mapname}.jpg`"
           >
             <v-row class="shadow-inline">
               <v-col>
@@ -231,12 +231,17 @@
   )
 
   function getTop1Infomation (data) {
+    top1.name.value = t('mapinfo.top1.loading')
     axios.get(`https://uapis.cn/api/steamuserinfo?input=[U:1:${data.auth}]`).then(res => {
       res = res.data
-      top1.name.value = res.username
-      top1.avatar.value = res.avatar
-      top1.date = dayjs(data.date * 1000).format('YYYY-MM-DD HH:mm:ss')
-      top1.time = Math.floor(data.time * 1000) / 1000
+      if(res.code == 200){
+        top1.name.value = res.username
+        top1.avatar.value = res.avatar
+        top1.date = dayjs(data.date * 1000).format('YYYY-MM-DD HH:mm:ss')
+        top1.time = Math.floor(data.time * 1000) / 1000
+      }else{
+        getTop1Infomation(data)
+      }
     })
   }
 

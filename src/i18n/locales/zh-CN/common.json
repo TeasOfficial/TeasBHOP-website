@@ -177,7 +177,8 @@
       "title4": "记录时间"
     },
     "top1": {
-      "map_no_records": "地图无记录..."
+      "map_no_records": "地图无记录...",
+      "loading": "加载中..."
     }
   }
 }

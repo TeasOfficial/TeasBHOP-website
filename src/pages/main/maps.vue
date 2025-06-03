@@ -48,7 +48,7 @@
               :key="k"
               v-slot="{ isHovering, props }"
             >
-              <tr v-bind="props" style="position: relative">
+              <tr v-bind="props" style="position: relative" @click="$router.push(`/maps/${k.map}`)">
                 <td>
                   {{ k.map }}
                 </td>
@@ -60,7 +60,6 @@
                   contained
                   :model-value="isHovering"
                   scrim="rgba(255,255,255,.1)"
-                  @click="$router.push(`/maps/${k.map}`)"
                 />
               </tr>
             </v-hover>
