@@ -80,9 +80,13 @@
 
 <script setup>
   import axios from '@/plugins/axios';
+  import merge from 'webpack-merge';
+
+  const router = useRouter()
+  const route = useRoute()
 
   const mapLists = ref([])
-  const page = ref(1)
+  const page = ref(route.query.page || 1)
   const maxPage = ref(1)
   const loading = ref(false)
 
@@ -99,6 +103,12 @@
         loading.value = false
       })
     }else{
+      router.push({
+        query:merge(
+          route.query,
+          { page: page.value },
+        ),
+      })
       axios.get(`/maps?page=${page.value}`).then(res => {
         mapLists.value = []
         res = res.data

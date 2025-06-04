@@ -11,6 +11,7 @@
           min-height="400"
         >
           <v-carousel
+            v-model="carousel"
             class="align-end text-white element-under"
             :cycle="2"
             height="500"
@@ -24,7 +25,26 @@
               cover
               :lazy-src="k.lazy"
               :src="k.full"
-            />
+            >
+              <template #error>
+                <div
+                  class="d-flex align-center justify-center fill-height"
+                >
+                  <p>
+                    无缩略图
+                  </p>
+                </div>
+              </template>
+              <template #placeholder>
+                <div class="d-flex align-center justify-center fill-height">
+                  <v-progress-circular
+                    color="grey-lighten-4"
+                    indeterminate
+                  />
+                </div>
+                <p>加载中...</p>
+              </template>
+            </v-carousel-item>
             <span class="element-over">
               <v-row class="shadow-inline">
                 <v-col style="padding-top: 0; margin-top: -15px;">
@@ -225,6 +245,7 @@
     date: ref(),
   }
   const _records = ref()
+  const carousel = ref(0)
 
   const chipColors = {
     0: 'white',
@@ -281,7 +302,12 @@
     url: ref(''),
     gml: ref(false),
   }
-  const mapthumbnail = ref([])
+  const mapthumbnail = ref([
+    {
+      lazy: '',
+      full: '',
+    },
+  ])
   const authors = ref('')
   const publishtime = ref(0)
 
@@ -308,13 +334,13 @@
               res = res.data
               res = JSON.parse(res[0])
               mapthumbnail.value = []
-              console.log(res)
               res.forEach(k => {
                 mapthumbnail.value.push({
                   lazy: `https://images.gamebanana.com/${k._sRelativeImageDir || '/img/ss/mods'}/${k._sFile100}`,
                   full: `https://images.gamebanana.com/${k._sRelativeImageDir || '/img/ss/mods'}/${k._sFile}`,
                 })
               });
+              carousel.value = 1
             })
             axios.get(
               `https://api.gamebanana.com/Core/Item/Data?itemid=${itemid}&itemtype=Mod&fields=authors`
@@ -332,7 +358,10 @@
             })
           }else{
             mapthumbnail.value = [
-              `https://raw.githubusercontent.com/TeasOfficial/map-tumbnail/refs/heads/main/${mapname}.jpg`,
+              {
+                lazy: ``,
+                full: `https://raw.githubusercontent.com/TeasOfficial/map-tumbnail/refs/heads/main/${mapname}.jpg`,
+              },
             ]
           }
         }
