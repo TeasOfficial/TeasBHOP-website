@@ -82,7 +82,7 @@
               frameborder="no"
               framespacing="0"
               scrolling="no"
-              src="//player.bilibili.com/player.html?aid=114617158210291&bvid=BV1mt7tzUEwn&cid=30294475304&p=1&autoplay=0"
+              src="//player.bilibili.com/player.html?&aid=114613551111260&bvid=BV1wB7Dz3EJu&cid=30286155417&p=1&autoplay=0"
               style="width: 40vw; height: 25vw;min-width: 300px;min-height: 150px;"
             />
           </v-col>

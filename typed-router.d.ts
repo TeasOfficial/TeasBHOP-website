@@ -27,9 +27,11 @@ declare module 'vue-router/auto-routes' {
     '/downloads/shavit-timer': RouteRecordInfo<'/downloads/shavit-timer', '/downloads/shavit-timer', Record<never, never>, Record<never, never>>,
     '/downloads/sourcemod': RouteRecordInfo<'/downloads/sourcemod', '/downloads/sourcemod', Record<never, never>, Record<never, never>>,
     '/main': RouteRecordInfo<'/main', '/main', Record<never, never>, Record<never, never>>,
+    '/main/leaderboards': RouteRecordInfo<'/main/leaderboards', '/main/leaderboards', Record<never, never>, Record<never, never>>,
     '/main/maps': RouteRecordInfo<'/main/maps', '/main/maps', Record<never, never>, Record<never, never>>,
     '/main/records': RouteRecordInfo<'/main/records', '/main/records', Record<never, never>, Record<never, never>>,
     '/mapinfo': RouteRecordInfo<'/mapinfo', '/mapinfo', Record<never, never>, Record<never, never>>,
+    '/run': RouteRecordInfo<'/run', '/run', Record<never, never>, Record<never, never>>,
     '/submit-a-translation': RouteRecordInfo<'/submit-a-translation', '/submit-a-translation', Record<never, never>, Record<never, never>>,
   }
 }

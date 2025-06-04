@@ -23,6 +23,12 @@ generatedRoutes.push({
   component: () => import('@/pages/mapinfo.vue'),
 })
 
+generatedRoutes.push({
+  path: '/run/:pathMatch(.*)*',
+  name: 'RunInfomation',
+  component: () => import('@/pages/run.vue'),
+})
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: generatedRoutes,

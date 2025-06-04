@@ -2,11 +2,11 @@
   <v-footer
     app
     :class="($route.path == '/') ? 'in-index ' : ($route.path.startsWith('/main') ? '' : 'align-center justify-center ') + 'in-other'"
-    :height="$route.path.startsWith('/main') || $route.path.startsWith('/maps') ? '0' : '40'"
+    :height="props.footmode != 0 || $route.path.startsWith('/main') ? '0' : '40'"
   >
     <span v-if="$route.path == '/'">
 
-      <TranslateButton />
+      <TranslateButton :footmode="props.footmode" />
 
       <div
         class="d-inline-block text-caption text-disabled cursor-default"
@@ -41,11 +41,11 @@
           <span>{{ $t('footer.leaderboards.button') }}</span>
         </v-btn>
 
-        <TranslateButton />
+        <TranslateButton :footmode="props.footmode" />
       </v-bottom-navigation>
     </span>
 
-    <span v-else-if="$route.path.startsWith('/maps')">
+    <span v-else-if="props.footmode == 2">
       <v-bottom-navigation v-model="open" :elevation="24">
 
         <v-btn @click="$router.back()">
@@ -53,12 +53,12 @@
           <span>{{ $t('footer.backtolast') }}</span>
         </v-btn>
 
-        <TranslateButton />
+        <TranslateButton :footmode="props.footmode" />
       </v-bottom-navigation>
     </span>
 
     <span v-else>
-      <TranslateButton />
+      <TranslateButton :footmode="props.footmode" />
 
       <v-btn to="/" variant="text">
         {{ $t('footer.back') }}
@@ -69,7 +69,15 @@
 
 <script setup>
   import TranslateButton from './TranslateButton.vue';
-  const open = true
+  const open = true;
+
+  const props = defineProps({
+    footmode: {
+      type: Number,
+      default: 0,
+    },
+  });
+
 </script>
 
 <style scoped lang="sass">
@@ -95,6 +103,11 @@
 
 .v-footer {
   transition: all .8s;
+  z-index: 9999999 !important;
+
+  &>*{
+    z-index: 9999998 !important;
+  }
 }
 
 a,

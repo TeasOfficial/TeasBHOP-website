@@ -180,5 +180,42 @@
       "map_no_records": "地图无记录...",
       "loading": "加载中..."
     }
+  },
+  "runinfo": {
+    "title": "记录详情",
+    "subtitle": {
+      "line1": "在 {mapname} 上的数据",
+      "line2": "记录用时: {time}s"
+    },
+    "loading": "加载中...",
+    "strafes": "加速次数",
+    "jumps": "跳跃次数",
+    "sync": "同步率",
+    "completions": "完成次数",
+    "date": "记录创建时间"
+  },
+  "recentruns": {
+    "title": "最新记录列表",
+    "table": {
+      "head": {
+        "1": "RunID",
+        "2": "玩家名",
+        "3": "地图名",
+        "4": "用时",
+        "5": "日期"
+      }
+    },
+    "subtitle": "只显示最新 100 条，如需查询更多请前往 地图 分页"
+  },
+  "leaderboards": {
+    "title": "服务器排行榜",
+    "subtitle": "服务器玩家前十",
+    "table": {
+      "header": {
+        "1": "排名",
+        "2": "用户名",
+        "points": "点数"
+      }
+    }
   }
 }

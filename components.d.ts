@@ -10,8 +10,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     FloatButton: typeof import('./src/components/FloatButton.vue')['default']
+    LeaderBoardsTops: typeof import('./src/components/LeaderBoardsTops.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    RunInfoCard: typeof import('./src/components/RunInfoCard.vue')['default']
     TranslateButton: typeof import('./src/components/TranslateButton.vue')['default']
   }
 }

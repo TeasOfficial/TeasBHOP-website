@@ -3,7 +3,7 @@
     <template #activator="{ props }">
       <v-btn variant="text" v-bind="props">
         <v-icon icon="mdi-translate" />
-        <span v-if="$route.path.startsWith('/main') || $route.path.startsWith('/maps')">
+        <span v-if="!$route.path.startsWith('/downloads')">
           {{ $t('footer.translate') }}
         </span>
       </v-btn>
@@ -27,7 +27,7 @@
 
   const languages = [
     { title: '简体中文', type: 'zhHans', compile: 100 },
-    { title: 'English', type: 'en', compile: 18.3 },
+    { title: 'English', type: 'en', compile: 12.7 },
   ]
 
   function changeLanguage (e) {

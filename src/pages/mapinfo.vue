@@ -115,7 +115,7 @@
                   :key="k"
                   v-slot="{ isHovering, props }"
                 >
-                  <tr v-bind="props" style="position: relative">
+                  <tr v-bind="props" style="position: relative" @click="$router.push(`/run/${k.id}`)">
                     <td>
                       {{ v + 1 }}
                     </td>
@@ -149,7 +149,7 @@
       </div>
     </v-container>
   </v-lazy>
-  <AppFooter />
+  <AppFooter :footmode="2" />
 </template>
 
 <script setup>
