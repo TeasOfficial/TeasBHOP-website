@@ -1,31 +1,221 @@
 {
+  "welcome": "Shatter the barriers of speed, soar through the skies like a smooth path",
+  "footer": {
+    "back": "Back to Home",
+    "translate": "Change Language",
+    "records": {
+      "button": "Records"
+    },
+    "maps": {
+      "button": "Maps"
+    },
+    "index": "Home",
+    "leaderboards": {
+      "button": "Leaderboards"
+    },
+    "backtolast": "Back to Previous Page"
+  },
   "index": {
-    "translate": "> Make contributions to translation <"
-  },
-  "translate": {
-    "title": "Submit translation documents / Contribute to the translation effort",
-    "subtitle": "We need you!",
-    "q1": "How can I obtain the translation file?",
-    "a1": "We have hosted the translation files on GitHub, and you can visit our i18n repository for more details.",
-    "q2": "How should I submit the translation file?",
-    "a2": "You just need to submit a PR in the GitHub repository.",
-    "q3": "What is the address of the GitHub repository?"
-  },
-  "downloads": {
-    "cdn": {
-      "github": "GitHub"
+    "website": "Visit Official Website",
+    "downloads": "Downloads",
+    "translate": "> Contribute to Translations <",
+    "forum": {
+      "button": "Visit Forum"
     }
   },
-  "footer": {
-    "back": "HOME",
-    "translate": "Languages"
+  "translate": {
+    "title": "Submit Translation Files / Contribute to Translation Work",
+    "subtitle": "We Need You",
+    "q1": "How can I get the translation files?",
+    "a1": "We host the translation files on GitHub. You can visit our i18n repository for details.",
+    "q2": "How can I submit translation files?",
+    "a2": "Simply submit a PR in the GitHub repository.",
+    "q3": "What's the GitHub repository address?"
   },
-  "work_in_progress": "The website/page is still under construction, please be patient!",
+  "downloads": {
+    "header": {
+      "title": "Downloads",
+      "s64": "64-bit Server",
+      "s32": "32-bit Server"
+    },
+    "drawer": {
+      "index": "Back to Home",
+      "item1": {
+        "title": "BHOP Local Server Download",
+        "subtitle": "Created by Picrisol45"
+      },
+      "item2": "64-bit Server",
+      "item3": {
+        "title": "Essential Server Plugins",
+        "subtitle": "Recommended for self-hosted servers"
+      },
+      "item4": {
+        "title": "Map Resources",
+        "subtitle": "Vast selection of maps available"
+      }
+    },
+    "title": "Welcome to TeasBHOP Downloads Page",
+    "forDesktop": {
+      "q": "For PC/Widescreen Users:",
+      "a1": "The drawer on the left side of the page usually opens automatically. You can select the resources you want to download from the left drawer.",
+      "a2": "Click on corresponding resources to view details."
+    },
+    "forMobile": {
+      "q": "For Mobile/Narrow Screen Users:",
+      "a1": "The left drawer is hidden by default. You need to click the list icon on the left side of the navigation bar to expand the drawer.",
+      "a2": "After expanding, you can select the resources you want to download from the drawer.",
+      "a3": "Click on corresponding resources to view details."
+    },
+    "cdn": {
+      "title": "Content Delivery Providers",
+      "pan123": "123 Cloud Storage",
+      "github": "GitHub",
+      "notice": {
+        "title": "Important Notice Before Downloading",
+        "value": "If you use 123 Cloud Storage for downloading, you need to pay for traffic (¥0.06/GB).\nYou can download for free after registering/logging into a 123 Cloud Storage account.\n70% of the traffic fee goes to the cloud storage platform, while 30% goes to TeasOfficial.",
+        "github": "GitHub has poor support for Chinese network environment.\nYou can use steamcommunity 302 or Watt Toolkit to accelerate access."
+      },
+      "origin": "Official Website",
+      "mmod": {
+        "value": "MetaMod: Source and SourceMod have poor support for Chinese network environment.\nWe recommend using network proxy software before downloading. We currently don't provide mirror download links, please understand!"
+      }
+    },
+    "tips": "You can always return to this page by clicking 'Back to Home' in the drawer.",
+    "x64": {
+      "title": "BHOP Local Server Download - 64-bit New Version",
+      "notice1": {
+        "title": "Usage Notice (Recommended Reading)",
+        "value": "1. Run server.bat to start the local server\n2. To add administrators, add the following line at the end of \\cstrike\\addons\\sourcemod\\configs\\admin_simple.ini:\n\"STEAM_0:0:XXXXXXX\"\"z\"\n\nIf you don't know your steamid, check it at https://steamid.io/\n3. !admin in Timer Commands can add or remove zones and records\n4. Other common commands:\n!js to view ssj jhud and other jump data\n!nv to enable night vision !nvs for night vision settings\n!line to show routes !bash2 to show anti-cheat logs"
+      }
+    },
+    "link": "Download Link:",
+    "mmod": {
+      "notice1": {
+        "value": "MetaMod: Source and SourceMod are system-specific!\nWindows version cannot be used on Linux, and vice versa. Please check your server system version before downloading!",
+        "title": "Installation Notice (Recommended Reading)"
+      }
+    },
+    "fastdl": {
+      "mirror": "Map Downloads",
+      "title": "Map Download Site",
+      "desc": "Confirmation before redirecting",
+      "confirm": {
+        "text": "You are about to visit https://hub.ipairsdo.xin/",
+        "subtext": "Are you sure?",
+        "button": "Visit Website"
+      }
+    }
+  },
+  "mmod": {
+    "title": "MetaMod: Source",
+    "desc": "Plugin Introduction: This plugin is a prerequisite for SourceMod and must be installed"
+  },
+  "smod": {
+    "title": "SourceMod",
+    "desc": "The origin of all things, the beginning of everything."
+  },
+  "shavit": {
+    "timer": {
+      "title": "Shavit Timer",
+      "desc": "The most popular bhoptimer plugin",
+      "alert": "Does not include plugin installation tutorials. Please search for tutorials on platforms like Bilibili or Douyin."
+    }
+  },
+  "work_in_progress": "Website/Page is still under construction, please be patient!",
   "error": {
     "404": {
-      "title": "Oops!",
-      "subtitle": "404 Not found",
-      "text": "Details\nPage not found"
+      "title": "Oops, something went wrong!",
+      "subtitle": "404 Page Not Found",
+      "text": "Details\nThe page you're looking for doesn't exist (or returned no content)"
+    }
+  },
+  "main": {
+    "subtitle": "You can access data through the navigation bar below",
+    "serverlists": {
+      "title": "Server List",
+      "header": {
+        "1": "Server Name",
+        "2": "Quick Join"
+      },
+      "body": {
+        "fastjoin": "Click to Join"
+      }
+    },
+    "sociallink": "Social Links",
+    "video": {
+      "title": "Recommended Videos"
+    }
+  },
+  "social": {
+    "discord": "Discord",
+    "bilibili": "Bilibili",
+    "github": "Github"
+  },
+  "maplist": {
+    "title": "Map List",
+    "mapname": "Map Name",
+    "searchhint": "Will only return 15 matching results"
+  },
+  "tier": "Tier",
+  "mapinfo": {
+    "title": "Map Details",
+    "sourcejump": {
+      "nomap": "SourceJump doesn't have this map / No records",
+      "infomation": "SourceJump Information",
+      "points": "Points"
+    },
+    "downloadbtn": "Download Map",
+    "serverrecord": "Server Record",
+    "record": {
+      "spenttime": "Record Time",
+      "createtime": "Record Creation Time"
+    },
+    "table": {
+      "title1": "Rank",
+      "title2": "Username",
+      "title3": "Record Time",
+      "title4": "Record Date"
+    },
+    "top1": {
+      "map_no_records": "No records for this map...",
+      "loading": "Loading..."
+    }
+  },
+  "runinfo": {
+    "title": "Record Details",
+    "subtitle": {
+      "line1": "Data on {mapname}",
+      "line2": "Record Time: {time}s"
+    },
+    "loading": "Loading...",
+    "strafes": "Strafes",
+    "jumps": "Jumps",
+    "sync": "Sync",
+    "completions": "Completions",
+    "date": "Record Creation Date"
+  },
+  "recentruns": {
+    "title": "Recent Records List",
+    "table": {
+      "head": {
+        "1": "RunID",
+        "2": "Player Name",
+        "3": "Map Name",
+        "4": "Time",
+        "5": "Date"
+      }
+    },
+    "subtitle": "Only showing the latest 100 records. For more queries, please go to the Maps section"
+  },
+  "leaderboards": {
+    "title": "Server Leaderboards",
+    "subtitle": "Top 10 Players on Server",
+    "table": {
+      "header": {
+        "1": "Rank",
+        "2": "Username",
+        "points": "Points"
+      }
     }
   }
 }
