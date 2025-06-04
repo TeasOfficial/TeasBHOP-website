@@ -22,7 +22,8 @@
               v-for="k in mapthumbnail"
               :key="k"
               cover
-              :src="k"
+              :lazy-src="k.lazy"
+              :src="k.full"
             />
             <span class="element-over">
               <v-row class="shadow-inline">
@@ -307,10 +308,12 @@
               res = res.data
               res = JSON.parse(res[0])
               mapthumbnail.value = []
+              console.log(res)
               res.forEach(k => {
-                mapthumbnail.value.push(
-                  `https://images.gamebanana.com/${k._sRelativeImageDir || '/img/ss/mods'}/${k._sFile}`
-                )
+                mapthumbnail.value.push({
+                  lazy: `https://images.gamebanana.com/${k._sRelativeImageDir || '/img/ss/mods'}/${k._sFile100}`,
+                  full: `https://images.gamebanana.com/${k._sRelativeImageDir || '/img/ss/mods'}/${k._sFile}`,
+                })
               });
             })
             axios.get(
