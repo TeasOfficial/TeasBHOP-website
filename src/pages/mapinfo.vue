@@ -16,7 +16,7 @@
             height="500"
             hide-delimiters
             progress="primary"
-            :show-arrows="false"
+            show-arrows="hover"
           >
             <v-carousel-item
               v-for="k in mapthumbnail"
@@ -254,6 +254,7 @@
       sourcejump_nomap.value = true
       return
     }
+
     points.sourcejump.value = res[0].points
     tier.sourcejump.value = res[0].tier
     WR.value = res[0].timeSeconds
@@ -424,7 +425,7 @@
   margin-right: 20px;
 }
 .shadow-inline {
-  box-shadow:0 0 15px 20px rgba( #000000, 0.6);
+  box-shadow: 0 0 15px 20px rgba( #000000, 0.6);
   background-color: rgba( #000000, 0.6);
 }
 
