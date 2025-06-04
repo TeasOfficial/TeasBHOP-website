@@ -27,5 +27,8 @@
       "subtitle": "404 Not found",
       "text": "Details\nPage not found"
     }
+  },
+  "date": {
+    "now": "now"
   }
 }

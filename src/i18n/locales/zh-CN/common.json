@@ -162,7 +162,7 @@
     "sourcejump": {
       "nomap": "SourceJump 未收录该地图 / 无记录",
       "infomation": "SourceJump 信息",
-      "points": "积分"
+      "points": "P"
     },
     "downloadbtn": "下载地图",
     "serverrecord": "Server Record",
@@ -179,7 +179,10 @@
     "top1": {
       "map_no_records": "地图无记录...",
       "loading": "加载中..."
-    }
+    },
+    "authors": "由 {authors} 制作 ",
+    "publicdate": "{date} 发布",
+    "nodownloadLink": "暂无下载地址"
   },
   "runinfo": {
     "title": "记录详情",
@@ -217,5 +220,21 @@
         "points": "点数"
       }
     }
-  }
+  },
+  "filesize": "文件大小",
+  "bytes": "字节",
+  "date": {
+    "now": "刚刚",
+    "minutes": "分钟前",
+    "minute": "分钟前",
+    "days": "天前",
+    "day": "天前",
+    "hour": "小时前",
+    "hours": "小时前",
+    "month": "个月前",
+    "months": "个月前",
+    "year": "年前",
+    "years": "年前"
+  },
+  "gamebanana": "GameBanana"
 }
