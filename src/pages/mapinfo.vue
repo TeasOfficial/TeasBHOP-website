@@ -218,14 +218,16 @@
 </template>
 
 <script setup>
-  import { useRoute } from 'vue-router';
+  import { useRoute, useRouter } from 'vue-router';
   const $route = useRoute();
+  const router = useRouter();
   import ColorThief from 'colorthief';
   import dayjs from 'dayjs';
   import { useI18n } from 'vue-i18n';
   const { t } = useI18n()
 
   const mapname = $route.path.split('/')[2]
+  if(!mapname) router.push('/404')
   const tier = {
     server: ref(0),
     sourcejump: ref(0),

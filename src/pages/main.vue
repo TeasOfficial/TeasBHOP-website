@@ -1,7 +1,7 @@
 <template>
   <router-view v-if="$route.path != '/main'" />
   <v-lazy v-else>
-    <v-container>
+    <v-container :class="display.xs.value ? 'isMobile' : ''">
       <div>
         <p class="text-h2 text-center mt-12">
           TeasBHOP
@@ -11,7 +11,11 @@
         </p>
       </div>
       <br>
-      <div class="mx-auto" style="width: 70%;">
+      <div class="text-center">
+        <LoginWithSteam />
+      </div>
+      <br>
+      <div class="mx-auto" :class="display.xs.value ? 'TableMobile' : 'isDesktop'">
         <p class="mb-5">
           {{ $t('main.serverlists.title') }}
         </p>
@@ -92,3 +96,21 @@
     </v-container>
   </v-lazy>
 </template>
+
+<script setup>
+  import { useDisplay } from 'vuetify';
+  const display = useDisplay();
+</script>
+
+<style lang="scss">
+  .isMobile {
+    padding: 0;
+    width: 100%;
+  }
+  .isDesktop {
+    width: 70%;
+  }
+  .TableMobile {
+    width: 90%;
+  }
+</style>

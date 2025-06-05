@@ -29,6 +29,13 @@ generatedRoutes.push({
   component: () => import('@/pages/run.vue'),
 })
 
+generatedRoutes.push({
+  path: '/user/:pathMatch(.*)*',
+  name: 'UserInfomation',
+  component: () => import('@/pages/user.vue'),
+})
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: generatedRoutes,

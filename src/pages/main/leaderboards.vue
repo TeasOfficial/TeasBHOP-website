@@ -2,14 +2,31 @@
   <v-lazy min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
     <v-container>
       <div class="mx-auto cursor-default" style="width: 80%;">
-        <p class="text-h4 mt-5">
-          {{ $t('leaderboards.title') }}
-        </p>
-        <p class="text-disabled">
-          {{ $t('leaderboards.subtitle') }}
-        </p>
+        <PageTitle :subtitle="$t('leaderboards.subtitle')" :title="$t('leaderboards.title')" />
         <br>
-        <v-row>
+        <div v-if="isMobile">
+          <LeaderBoardsTops
+            :auth="others[0].auth"
+            :name="others[0].name"
+            :points="others[0].points"
+            :top="1"
+          />
+          <br>
+          <LeaderBoardsTops
+            :auth="others[1].auth"
+            :name="others[1].name"
+            :points="others[1].points"
+            :top="2"
+          />
+          <br>
+          <LeaderBoardsTops
+            :auth="others[2].auth"
+            :name="others[2].name"
+            :points="others[2].points"
+            :top="3"
+          />
+        </div>
+        <v-row v-else>
           <v-col cols="4">
             <LeaderBoardsTops
               :auth="others[1].auth"
@@ -64,7 +81,7 @@
                 v-if="v > 2"
                 v-bind="props"
                 style="position: relative"
-                @click="openURL(`https://steamcommunity.com/profiles/[U:1:${k.auth}]`)"
+                @click="router.push(`/user/${k.auth}?type=auth`)"
               >
                 <td>
                   {{ v + 1 }}
@@ -92,6 +109,10 @@
 
 <script setup>
   import axios from '@/plugins/axios'
+  import router from '@/router'
+  import { useDisplay } from 'vuetify'
+  const display = useDisplay()
+  const isMobile = display.xs
 
   const others = ref({
     0: {},
@@ -107,8 +128,4 @@
       }
     }
   )
-
-  const openURL = url => {
-    window.open(url)
-  };
 </script>

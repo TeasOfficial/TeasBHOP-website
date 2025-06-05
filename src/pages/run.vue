@@ -16,25 +16,26 @@
             cover
             height="400"
           >
-            <v-row class="shadow-inline">
+            <v-row class="shadow-inline" style="margin-bottom: -32px;">
               <v-col>
-                <v-avatar
-                  class="ml-4"
-                  rounded="0"
-                  size="100"
-                >
-                  <v-img cover :src="runinfo.avatar.value" />
-                </v-avatar>
                 <span v-if="!runinfo.loading.value">
                   <v-card-title>
-                    <a class="steamprofile" :href="`https://steamcommunity.com/profiles/[U:1:${runinfo.auth.value}]`" target="_blank">
-                      {{ runinfo.name }}
-                    </a>
+                    {{ runinfo.name }}
                   </v-card-title>
                   <v-card-subtitle>
                     {{ $t('runinfo.subtitle.line1', {mapname: runinfo.map.value}) }}
                     <br>
                     {{ $t('runinfo.subtitle.line2', {time: runinfo.time.value.toFixed(3)}) }}
+                    <br>
+                    <span class="btngroup">
+                      <v-btn color="white" :href="`https://steamcommunity.com/profiles/[U:1:${runinfo.auth.value}]`" target="_blank" variant="text">
+                        {{ $t('runinfo.view.steamprofile') }}
+                      </v-btn>
+                      &ensp;
+                      <v-btn color="white" :to="`/user/${runinfo.auth.value}?type=auth`" variant="text">
+                        {{ $t('runinfo.view.userprofile') }}
+                      </v-btn>
+                    </span>
                   </v-card-subtitle>
                 </span>
                 <span v-else>
@@ -43,30 +44,39 @@
                   </v-card-title>
                 </span>
               </v-col>
+              <v-col class="text-right mr-5">
+                <v-avatar
+                  class="ml-4"
+                  rounded="0"
+                  size="100"
+                >
+                  <v-img cover :src="runinfo.avatar.value" />
+                </v-avatar>
+              </v-col>
             </v-row>
             <br>
           </v-img>
           <v-card-text>
             <v-row>
-              <v-col cols="6">
+              <v-col :cols="display.xs.value ? 12 : 6">
                 <RunInfoCard
                   :subtitle="status.strafes"
                   :title="$t('runinfo.strafes')"
                 />
               </v-col>
-              <v-col cols="6">
+              <v-col :cols="display.xs.value ? 12 : 6">
                 <RunInfoCard
                   :subtitle="status.jumps"
                   :title="$t('runinfo.jumps')"
                 />
               </v-col>
-              <v-col cols="6">
+              <v-col :cols="display.xs.value ? 12 : 6">
                 <RunInfoCard
                   :subtitle="status.sync + '%'"
                   :title="$t('runinfo.sync')"
                 />
               </v-col>
-              <v-col cols="6">
+              <v-col :cols="display.xs.value ? 12 : 6">
                 <RunInfoCard
                   :subtitle="status.completions"
                   :title="$t('runinfo.completions')"
@@ -88,10 +98,16 @@
 </template>
 
 <script setup>
+  import ColorThief from 'colorthief';
+  import { RGBtoHex } from 'vuetify/lib/util/colorUtils.mjs';
+  const router = useRouter();
   const route = useRoute();
   const runid = route.path.split('/')[2]
+  if(!runid) router.push('/404')
   import axios from '@/plugins/axios'
   import dayjs from 'dayjs';
+  import { useDisplay } from 'vuetify';
+  const display = useDisplay()
 
   const runinfo = {
     name:   ref(),
@@ -144,8 +160,6 @@
     })
   }
 
-  import ColorThief from 'colorthief';
-  import { RGBtoHex } from 'vuetify/lib/util/colorUtils.mjs';
   function extractColors () {
     const colorThief = new ColorThief();
     const img = document.createElement('img');
@@ -173,14 +187,9 @@
   box-shadow:0 0 15px 20px rgba( #000000, 0.6);
   background-color: rgba( #000000, 0.6);
 }
-.steamprofile {
-  text-decoration: none;
-  color: white;
-  transition: all .3s;
-
-  &:hover {
-    text-decoration: underline;
-    color: rgba(25, 118, 210, 1)
+.btngroup{
+  &>.v-btn{
+    padding: 0 !important;
   }
 }
 </style>

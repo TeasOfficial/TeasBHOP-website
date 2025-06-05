@@ -18,6 +18,7 @@ const i18n = createI18n({
   messages,
 })
 
+
 export function registerPlugins (app) {
   app
     .use(i18n)

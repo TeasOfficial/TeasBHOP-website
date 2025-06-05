@@ -1,14 +1,7 @@
 <template>
   <v-lazy min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
     <v-container>
-      <div class="mx-auto cursor-default" style="width: 80%;">
-        <p class="text-h4 mt-5">
-          {{ $t('recentruns.title') }}
-        </p>
-        <p class="text-disabled">
-          {{ $t('recentruns.subtitle') }}
-        </p>
-      </div>
+      <PageTitle :subtitle="$t('recentruns.subtitle')" :title="$t('recentruns.title')" />
       <v-pagination
         v-model="page"
         class="my-4"
@@ -88,6 +81,8 @@
   const page = ref(1);
   const recentruns = ref([])
   const loading = ref(true)
+  // import { useDisplay } from 'vuetify';
+  // const display = useDisplay()
 
   const a = () => {
     axios.get(`/records?page=${page.value}`).then(
@@ -104,5 +99,10 @@
 </script>
 
 <style lang="scss" scoped>
+.isDesktop {
+  width: 80%;
+}
+.isMobile {
 
+}
 </style>

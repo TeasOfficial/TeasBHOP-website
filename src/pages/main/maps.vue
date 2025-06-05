@@ -2,7 +2,7 @@
   <v-lazy min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
     <v-container>
       <div class="mx-auto" style="width: 80%">
-        <v-row align="center" justify="center">
+        <v-row v-if="!display.xs.value" align="center" justify="center">
           <v-col cols="5">
             <p class="text-h4">
               {{ $t('maplist.title') }}
@@ -21,6 +21,22 @@
             </v-form>
           </v-col>
         </v-row>
+        <div v-else class="text-center">
+          <p class="mt-5 text-h4">
+            {{ $t('maplist.title') }}
+          </p>
+          <br>
+          <v-form @submit="a(mapname)" @submit.prevent>
+            <v-text-field
+              v-model="mapname"
+              append-inner-icon="mdi-magnify"
+              :hint="$t('maplist.searchhint')"
+              :label="$t('maplist.mapname')"
+              variant="solo-filled"
+              @click:append-inner="a(mapname)"
+            />
+          </v-form>
+        </div>
         <v-pagination
           v-model="page"
           class="my-4"
@@ -81,6 +97,8 @@
 <script setup>
   import axios from '@/plugins/axios';
   import merge from 'webpack-merge';
+  import { useDisplay } from 'vuetify';
+  const display = useDisplay()
 
   const router = useRouter()
   const route = useRoute()

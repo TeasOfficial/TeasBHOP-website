@@ -18,28 +18,10 @@
 
     <span v-else-if="$route.path.startsWith('/main')">
       <v-bottom-navigation v-model="open" :elevation="24">
-        <v-btn v-if="$route.path == '/main'" to="/">
-          <v-icon>mdi-home</v-icon>
-          <span>{{ $t('footer.back') }}</span>
-        </v-btn>
+        <CommonMenu />
 
-        <v-btn v-else :active="false" to="/main">
-          <v-icon>mdi-keyboard-return</v-icon>
-          <span>{{ $t('footer.index') }}</span>
-        </v-btn>
-
-        <v-btn to="/main/records">
-          <v-icon>mdi-history</v-icon>
-          <span>{{ $t('footer.records.button') }}</span>
-        </v-btn>
-        <v-btn to="/main/maps">
-          <v-icon>mdi-map-outline</v-icon>
-          <span>{{ $t('footer.maps.button') }}</span>
-        </v-btn>
-        <v-btn to="/main/leaderboards">
-          <v-icon>mdi-podium</v-icon>
-          <span>{{ $t('footer.leaderboards.button') }}</span>
-        </v-btn>
+        <MobilePhoneMenu v-if="display.xs.value" />
+        <DesktopMenu v-else />
 
         <TranslateButton :footmode="props.footmode" />
       </v-bottom-navigation>
@@ -69,7 +51,7 @@
 
 <script setup>
   import TranslateButton from './TranslateButton.vue';
-  const open = true;
+  const open = ref(true);
 
   const props = defineProps({
     footmode: {
@@ -77,6 +59,9 @@
       default: 0,
     },
   });
+
+  import { useDisplay } from 'vuetify';
+  const display = useDisplay();
 
 </script>
 

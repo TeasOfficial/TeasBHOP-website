@@ -195,7 +195,11 @@
     "jumps": "跳跃次数",
     "sync": "同步率",
     "completions": "完成次数",
-    "date": "记录创建时间"
+    "date": "记录创建时间",
+    "view": {
+      "steamprofile": "访问STEAM个人资料",
+      "userprofile": "查询玩家资料"
+    }
   },
   "recentruns": {
     "title": "最新记录列表",
@@ -236,5 +240,17 @@
     "year": "年前",
     "years": "年前"
   },
-  "gamebanana": "GameBanana"
+  "gamebanana": "GameBanana",
+  "parallax": {
+    "view": {
+      "steamprofile": "查看STEAM个人资料",
+      "edit": "操作",
+      "registed_at": "注册于",
+      "point": "积分",
+      "loading": "加载中...",
+      "steam_registed_at": "Steam 注册时间: "
+    },
+    "not_registed": "该账户未在 TeasBHOP 进行注册"
+  },
+  "logout": "登出"
 }

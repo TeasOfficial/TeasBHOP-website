@@ -3,8 +3,7 @@
     :class="`grow-${props.top}`"
     :color="colors[props.top]"
     height="100"
-    :href="`https://steamcommunity.com/profiles/[U:1:${props.auth}]`"
-    target="_blank"
+    :to="`/user/${props.auth}?type=auth`"
   >
     <v-row>
       <v-col>
@@ -12,7 +11,7 @@
           TOP #{{ props.top }}
         </v-card-title>
         <v-card-subtitle class="mb-2" style="overflow: hidden;">
-          {{ props.name || '用户名占位符' }}
+          {{ props.name }}
           <br>
           {{ props.points }} 积分
         </v-card-subtitle>

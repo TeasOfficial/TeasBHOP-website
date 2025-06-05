@@ -9,8 +9,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
+    CommonMenu: typeof import('./src/components/FooterComponents/CommonMenu.vue')['default']
+    DesktopMenu: typeof import('./src/components/FooterComponents/DesktopMenu.vue')['default']
     FloatButton: typeof import('./src/components/FloatButton.vue')['default']
     LeaderBoardsTops: typeof import('./src/components/LeaderBoardsTops.vue')['default']
+    LoginWithSteam: typeof import('./src/components/LoginWithSteam.vue')['default']
+    MobilePhoneMenu: typeof import('./src/components/FooterComponents/MobilePhoneMenu.vue')['default']
+    PageTitle: typeof import('./src/components/PageCommon/PageTitle.vue')['default']
+    ParallaxDesktop: typeof import('./src/components/UserInfomation/ParallaxDesktop.vue')['default']
+    ParallaxMobile: typeof import('./src/components/UserInfomation/ParallaxMobile.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     RunInfoCard: typeof import('./src/components/RunInfoCard.vue')['default']
