@@ -1,108 +1,58 @@
 <template>
   <v-lazy min-height="200" :options="{ 'threshold': 0.5 }" transition="fade-transition">
     <v-container>
-      <PageTitle :subtitle="$t('recentruns.subtitle')" :title="$t('recentruns.title')" />
-      <v-pagination
-        v-model="page"
-        class="my-4"
-        length="7"
-        @update:model-value="a()"
-      />
-      <v-table class="mt-5 mx-auto" style="width: 95%">
-        <thead>
-          <tr>
-            <th>
-              {{ $t('recentruns.table.head.1') }}
-            </th>
-            <th>
-              {{ $t('recentruns.table.head.2') }}
-            </th>
-            <th>
-              {{ $t('recentruns.table.head.3') }}
-            </th>
-            <th>
-              {{ $t('recentruns.table.head.4') }}
-            </th>
-            <th>
-              {{ $t('recentruns.table.head.5') }}
-            </th>
-          </tr>
-        </thead>
-        <v-skeleton-loader
-          v-if="loading"
-          type="table-row-divider@15"
-        />
-        <tbody v-else>
-          <v-hover
-            v-for="k in recentruns"
-            :key="k"
-            v-slot="{ isHovering, props }"
-          >
-            <tr v-bind="props" style="position: relative" @click="$router.push(`/run/${k.id}`)">
-              <td>
-                {{ k.id }}
-              </td>
-              <td>
-                {{ k.name }}
-              </td>
-              <td>
-                {{ k.map }}
-              </td>
-              <td>
-                {{ k.time.toFixed(3) }}s
-              </td>
-              <td class="text-disabled">
-                <i>{{ dayjs(k.date * 1000).format("YYYY-MM-DD") }}</i>
-              </td>
-              <v-overlay
-                class="cursor-pointer"
-                contained
-                :model-value="isHovering"
-                scrim="rgba(255,255,255,.1)"
-              />
-            </tr>
-          </v-hover>
-        </tbody>
-      </v-table>
-      <v-pagination
-        v-model="page"
-        class="my-4"
-        length="7"
-        @update:model-value="a()"
-      />
+      <v-row v-if="!display.xs.value" align="center" justify="center">
+        <v-col cols="5">
+          <PageTitle :subtitle="$t('recentruns.subtitle')" :title="$t('recentruns.title')" />
+        </v-col>
+        <v-col>
+          <v-select
+            v-model="default_from"
+            class="mt-5"
+            :items="data_from"
+            label="数据来源"
+            :menu-props="{ scrollStrategy: 'close' }"
+            @update:model-value="dataChangedOrigin()"
+          />
+        </v-col>
+      </v-row>
+
+      <RecordsListTableT v-if="route.query.c == 'TeasBHOP'" />
+      <RecordsListTableS1 v-if="route.query.c == 'SourceJump-WR'" />
+      <RecordsListTableS2 v-if="route.query.c == 'SourceJump-SR'" />
+
     </v-container>
   </v-lazy>
 </template>
 
 <script setup>
-  import axios from '@/plugins/axios';
-  import dayjs from 'dayjs';
+  import { useDisplay } from 'vuetify';
 
-  const page = ref(1);
-  const recentruns = ref([])
-  const loading = ref(true)
-  // import { useDisplay } from 'vuetify';
-  // const display = useDisplay()
+  const route = useRoute()
+  const router = useRouter()
+  const default_from = shallowRef();
+  const display = useDisplay()
 
-  const a = () => {
-    axios.get(`/records?page=${page.value}`).then(
-      res => {
-        res = res.data
-        if(res.stats == 'success'){
-          recentruns.value = res.response
-          loading.value = false
-        }
-      }
-    )
+  if(!route.query.c) {
+    default_from.value = 'TeasBHOP'
+  }else{
+    default_from.value = route.query.c
   }
-  a();
+
+  const data_from = [
+    'TeasBHOP',
+    'SourceJump-WR',
+    'SourceJump-SR',
+  ];
+
+  const dataChangedOrigin = () => {
+    router.replace(`/main/records?c=${default_from.value}&page=${route.query.page || 1}`)
+  };
+  dataChangedOrigin();
 </script>
 
 <style lang="scss" scoped>
 .isDesktop {
   width: 80%;
-}
-.isMobile {
-
 }
 </style>

@@ -12,14 +12,8 @@
         />
       </center>
       <br>
-      <v-card>
-        <v-card-title>
-          {{ $t('parallax.view.sign') }}
-        </v-card-title>
-        <v-card-text style="white-space: pre-line;">
-          {{ info.sign.value || '这个家伙懒死了，还没写个性签名。' }}
-        </v-card-text>
-      </v-card>
+      <TeasBHOPUser v-if="route.query.type != 'sj'" :info="info" />
+      <SourceJumpUser v-else :info="sjres" />
     </v-container>
   </v-lazy>
   <AppFooter :footmode="2" />
@@ -63,31 +57,54 @@
     auth: ref(''),
     color: ref('#000'),
     sign: ref(''),
+    alias: ref(''),
+    banned: ref(),
+    country: ref(''),
+    dpi: ref(''),
+    keyboard: ref(''),
   }
 
-  axios.get(`/user?${type}=${uid}`).then(
-    res => {
-      res = res.data
-      if(res.stats == 'success'){
-        if(res.data.uid){
-          router.replace(`/user/${res.data.uid}?type=uid`)
-          info.has_account.value = true
-          info.uid.value = res.data.uid
-          info.is_me.value = res.data.uid == user.value.uid
-          info.username.value = res.data.username
-          info.date.value = res.data.created_at
-          info.background.value = res.data.background
-          info.sign.value = res.data.mysign
-        }else{
-          info.username.value = res.data.username
-        }
-        info.auth.value = res.data.auth
-        info.points.value = res.data.points
-
-        getSteamProfile()
+  const sjres = ref({})
+  if(route.query.type == 'sj'){
+    axios.get(`https://wr.ipairsdo.xin/ajax/players/search/[U:1:${uid}]`).then(
+      res => {
+        res = res.data.info[0]
+        info.background.value = 'no-img'
+        info.avatar.value = res.avatar
+        info.username.value = res.alias || res.name
+        info.date.value = 'Invalid Date'
+        info.has_account.value = false
+        info.points.value = res.points_auto
+        info.uid.value = res.id
+        info.auth.value = uid
+        sjres.value = res
       }
-    }
-  )
+    )
+  }else{
+    axios.get(`/user?${type}=${uid}`).then(
+      res => {
+        res = res.data
+        if(res.stats == 'success'){
+          if(res.data.uid){
+            router.replace(`/user/${res.data.uid}?type=uid`)
+            info.has_account.value = true
+            info.uid.value = res.data.uid
+            info.is_me.value = res.data.uid == user.value.uid
+            info.username.value = res.data.username
+            info.date.value = res.data.created_at
+            info.background.value = res.data.background
+            info.sign.value = res.data.mysign
+          }else{
+            info.username.value = res.data.username
+          }
+          info.auth.value = res.data.auth
+          info.points.value = res.data.points
+
+          getSteamProfile()
+        }
+      }
+    )
+  }
 
   const getSteamProfile = () => {
     axios.get(`https://uapis.cn/api/steamuserinfo?input=[U:1:${info.auth.value}]`).then(

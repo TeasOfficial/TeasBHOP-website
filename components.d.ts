@@ -18,9 +18,18 @@ declare module 'vue' {
     ParallaxDesktop: typeof import('./src/components/UserInfomation/ParallaxDesktop.vue')['default']
     ParallaxMobile: typeof import('./src/components/UserInfomation/ParallaxMobile.vue')['default']
     ProfileEditButton: typeof import('./src/components/UserInfomation/ProfileEditButton.vue')['default']
+    RecordsListTableS1: typeof import('./src/components/RecordsComponents/RecordsListTableS1.vue')['default']
+    RecordsListTableS2: typeof import('./src/components/RecordsComponents/RecordsListTableS2.vue')['default']
+    RecordsListTableT: typeof import('./src/components/RecordsComponents/RecordsListTableT.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    RunInfoBodyS: typeof import('./src/components/RunInfoComponents/RunInfoBodyS.vue')['default']
+    RunInfoBodyT: typeof import('./src/components/RunInfoComponents/RunInfoBodyT.vue')['default']
     RunInfoCard: typeof import('./src/components/RunInfoCard.vue')['default']
+    RunInfoHeadImg: typeof import('./src/components/RunInfoComponents/RunInfoHeadImg.vue')['default']
+    RunInfoHeadImgS: typeof import('./src/components/RunInfoComponents/RunInfoHeadImgS.vue')['default']
+    SourceJumpUser: typeof import('./src/components/UserInfomation/SourceJumpUser.vue')['default']
+    TeasBHOPUser: typeof import('./src/components/UserInfomation/TeasBHOPUser.vue')['default']
     TranslateButton: typeof import('./src/components/TranslateButton.vue')['default']
   }
 }

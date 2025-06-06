@@ -200,8 +200,10 @@
     "date": "记录创建时间",
     "view": {
       "steamprofile": "访问STEAM个人资料",
-      "userprofile": "查询玩家资料"
-    }
+      "userprofile": "查询玩家资料",
+      "map": "查看地图信息"
+    },
+    "server": "记录服务器"
   },
   "recentruns": {
     "title": "最新记录列表",
@@ -316,5 +318,6 @@
   "steam": {
     "authing": "正在验证登录，请稍后...",
     "authed": "登录成功，正在跳转"
-  }
+  },
+  "worldrecord": "世界记录"
 }

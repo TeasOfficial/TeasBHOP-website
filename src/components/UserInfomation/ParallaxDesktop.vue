@@ -37,7 +37,7 @@
                 <v-col cols="auto">
                   {{ info.points }} {{ $t('parallax.view.point') }}
                 </v-col>
-                <v-col v-if="info.has_account.value">
+                <v-col v-if="info.uid.value">
                   UID: {{ info.uid }}
                 </v-col>
               </v-row>
