@@ -13,7 +13,10 @@
     "leaderboards": {
       "button": "排行榜"
     },
-    "backtolast": "返回上一页"
+    "backtolast": "返回上一页",
+    "menu": {
+      "button": "菜单"
+    }
   },
   "index": {
     "website": "访问官网",
@@ -161,8 +164,7 @@
     "title": "地图详情",
     "sourcejump": {
       "nomap": "SourceJump 未收录该地图 / 无记录",
-      "infomation": "SourceJump 信息",
-      "points": "P"
+      "infomation": "SourceJump 信息"
     },
     "downloadbtn": "下载地图",
     "serverrecord": "Server Record",
@@ -248,9 +250,71 @@
       "registed_at": "注册于",
       "point": "积分",
       "loading": "加载中...",
-      "steam_registed_at": "Steam 注册时间: "
+      "steam_registed_at": "Steam 注册时间: ",
+      "sign": "个性签名"
     },
-    "not_registed": "该账户未在 TeasBHOP 进行注册"
+    "not_registed": "该账户未在 TeasBHOP 进行注册",
+    "load_fail": "!! 用户信息载入失败，请稍后再试",
+    "edit": {
+      "changename": "修改用户名",
+      "changeBgImg": "修改背景图",
+      "changesign": "修改签名",
+      "iknowBtn": "我已了解！",
+      "username": {
+        "fin": "若您已阅读完毕，请点击下方按钮继续操作。"
+      },
+      "name": {
+        "2": "完成后可以 按下回车 或点击 提交 按钮来确认你的修改。",
+        "3": "注意：受限于后端，修改后需要您重新登录才能完全生效！",
+        "alert": {
+          "2": "色情、恐怖、血腥、暴力、虐待等",
+          "3": "若用户名违规，我们会在不通知你的情况下清除你的用户名！",
+          "title": "<!> 警告，你正在修改用户名，请遵守中国法律规定，用户名禁止出现以下元素：",
+          "nameValid": "你必须输入一个有效的名字！",
+          "nameSame": "新旧名字不能相同！"
+        },
+        "title": "请在下方输入框中输入您的新用户名",
+        "newname": "新用户名"
+      },
+      "success": {
+        "title": "修改成功",
+        "text": "现在你可以安全的关闭页面了！"
+      },
+      "failed": {
+        "title": "修改失败",
+        "text": "未知错误！"
+      },
+      "sign": {
+        "2": "完成后可以点击 提交 按钮来确认你的修改。",
+        "3": "注意：修改个性签名不支持回车提交！！！",
+        "alert": {
+          "3": "若用户名违规，我们会在不通知你的情况下清除你的签名！",
+          "title": "<!> 警告，你正在修改个性签名，请遵守中国法律规定，禁止出现以下元素："
+        },
+        "title": "请在下方输入框中输入您的个性签名"
+      },
+      "bgImg": {
+        "alert": {
+          "2": "若背景图违规，我们会在不通知你的情况下清除你的背景图！",
+          "3": "注意：因服务器性能问题，请在图床上传好你的图片后，在下方输入框输入图片直连！！！",
+          "title": "<!> 警告，你正在修改背景图，请遵守中国法律规定，背景图禁止出现以下元素："
+        },
+        "title": "请在下方输入框中输入您的新背景图",
+        "link": "背景图链接"
+      }
+    }
   },
-  "logout": "登出"
+  "logout": "登出",
+  "userprofile": {
+    "welcome": {
+      "desktop": "欢迎您！",
+      "mobile": "欢迎您"
+    }
+  },
+  "login_with_steam": "通过 STEAM 登录",
+  "submit": "提交",
+  "steam": {
+    "authing": "正在验证登录，请稍后...",
+    "authed": "登录成功，正在跳转"
+  }
 }

@@ -1,6 +1,6 @@
 <template>
   <v-btn v-if="!token" @click="login()">
-    通过 STEAM 登录
+    {{ $t('login_with_steam') }}
   </v-btn>
   <v-card
     v-else
@@ -26,7 +26,7 @@
             <v-row>
               <v-col cols="12">
                 <p class="text-h5">
-                  欢迎您！
+                  {{ $t('userprofile.welcome.desktop') }}
                 </p>
               </v-col>
               <v-col cols="12">
@@ -53,7 +53,7 @@
           </v-avatar>
         </v-col>
         <v-col class="text-center mt-1" style="padding: 0;">
-          <b>欢迎您</b>
+          <b>{{ $t('userprofile.welcome.mobile') }}</b>
           <br>
           {{ user.username }}
         </v-col>

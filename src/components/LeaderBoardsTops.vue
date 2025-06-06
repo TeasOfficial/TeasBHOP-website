@@ -13,7 +13,7 @@
         <v-card-subtitle class="mb-2" style="overflow: hidden;">
           {{ props.name }}
           <br>
-          {{ props.points }} 积分
+          {{ props.points }} {{ $t('parallax.view.point') }}
         </v-card-subtitle>
       </v-col>
       <v-col>

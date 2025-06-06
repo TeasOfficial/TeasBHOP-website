@@ -2,15 +2,17 @@
   import axios from '@/plugins/axios'
   import router from '@/router'
   import cookies from 'vue-cookies'
+  import { useI18n } from 'vue-i18n'
+  const { t } = useI18n()
   const route = useRoute()
-  const loading = ref('正在验证登录，请稍后...');
+  const loading = ref(t('steam.authing'));
 
   axios.post('/steamapi', route.query)
     .then(res => {
       res = res.data
       if(res.stats == 'success') {
         cookies.set('teasbhop-token',res.token,res.expires)
-        loading.value = '登录成功，正在跳转'
+        loading.value = t('steam.authed')
       }
       router.push('/main')
     })

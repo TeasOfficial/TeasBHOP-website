@@ -30,7 +30,7 @@
     <span v-else-if="props.footmode == 2">
       <v-bottom-navigation v-model="open" :elevation="24">
 
-        <v-btn @click="$router.back()">
+        <v-btn :active="false" @click="$router.back()">
           <v-icon>mdi-keyboard-return</v-icon>
           <span>{{ $t('footer.backtolast') }}</span>
         </v-btn>

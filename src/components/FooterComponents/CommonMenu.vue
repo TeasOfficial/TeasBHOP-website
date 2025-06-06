@@ -1,5 +1,5 @@
 <template>
-  <v-btn v-if="$route.path == '/main'" to="/">
+  <v-btn v-if="$route.path == '/main'" :active="false" to="/">
     <v-icon>mdi-home</v-icon>
     <span>{{ $t('footer.back') }}</span>
   </v-btn>

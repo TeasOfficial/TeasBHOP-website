@@ -14,9 +14,9 @@
       <br>
       <v-card>
         <v-card-title>
-          个性签名
+          {{ $t('parallax.view.sign') }}
         </v-card-title>
-        <v-card-text>
+        <v-card-text style="white-space: pre-line;">
           {{ info.sign.value || '这个家伙懒死了，还没写个性签名。' }}
         </v-card-text>
       </v-card>
@@ -77,7 +77,7 @@
           info.username.value = res.data.username
           info.date.value = res.data.created_at
           info.background.value = res.data.background
-          info.sign.value = res.data.sign
+          info.sign.value = res.data.mysign
         }else{
           info.username.value = res.data.username
         }
@@ -107,7 +107,7 @@
       }
     ).catch(() => {
       info.points.value = -1
-      info.username.value = '!! 用户信息载入失败，请稍后再试'
+      info.username.value = t('parallax.load_fail')
     })
   };
 </script>

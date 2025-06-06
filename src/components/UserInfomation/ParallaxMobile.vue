@@ -43,9 +43,7 @@
         <v-col cols="12">
           <v-row>
             <v-col cols="12">
-              <v-btn v-if="info.is_me.value" color="white" variant="text">
-                操作
-              </v-btn>
+              <ProfileEditButton :info="info" />
               <span v-if="info.is_me.value">&ensp;</span>
               <v-btn color="white" :href="`https://steamcommunity.com/profiles/[U:1:${info.auth.value}]`" target="_blank" variant="text">
                 {{ $t('parallax.view.steamprofile') }}

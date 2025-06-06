@@ -48,9 +48,7 @@
         <v-col cols="auto">
           <v-row class="text-right">
             <v-col cols="12">
-              <v-btn v-if="info.is_me.value" color="white" variant="text">
-                {{ $t('parallax.view.edit') }}
-              </v-btn>
+              <ProfileEditButton :info="info" />
               <br>
               <v-btn
                 class="mt-1"

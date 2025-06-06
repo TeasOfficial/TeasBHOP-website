@@ -4,7 +4,7 @@
       <v-btn variant="text" v-bind="props">
         <v-icon icon="mdi-format-list-bulleted" />
         <span>
-          菜单
+          {{ $t('footer.menu.button') }}
         </span>
       </v-btn>
     </template>
