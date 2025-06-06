@@ -27,7 +27,7 @@
 
   const languages = [
     { title: '简体中文', type: 'zhHans', compile: 100 },
-    { title: 'English', type: 'en', compile: 12.7 },
+    { title: 'English (AI)', type: 'en', compile: 65.6 },
   ]
 
   function changeLanguage (e) {
